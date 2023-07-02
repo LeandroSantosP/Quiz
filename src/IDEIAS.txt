@@ -1,0 +1,21 @@
+Com base no exemplo acima, aqui estão algumas ideias de recursos adicionais que você pode implementar:
+
+Implementar autenticação de usuários para que apenas usuários autenticados possam criar e submeter quizzes.
+
+Adicionar uma funcionalidade de pontuação para os quizzes, onde os usuários podem ver sua pontuação total ou comparar sua pontuação com outros usuários.
+
+Permitir que os usuários marquem perguntas como favoritas para revisar mais tarde.
+
+Adicionar uma funcionalidade de temporizador para limitar o tempo de resposta para cada pergunta.
+
+Adicionar a capacidade de categorizar os quizzes e permitir que os usuários pesquisem quizzes por categoria.
+
+Implementar um sistema de ranking para os quizzes, mostrando os quizzes mais populares ou melhor avaliados.
+
+Adicionar uma funcionalidade de compartilhamento para que os usuários possam compartilhar os quizzes com outras pessoas.
+
+Permitir que os usuários editem ou excluam seus quizzes após criá-los.
+
+Adicionar suporte para múltiplos idiomas nos quizzes.
+
+Implementar uma funcionalidade de "Dica" para fornecer aos usuários uma pista ou ajuda em determinadas perguntas.
