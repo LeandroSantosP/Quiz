@@ -32,10 +32,10 @@ test("Deve Responder o quiz e retornar a media!", () => {
         { questionName: "Javascript is batter than rest?", answer: 1 },
         {
             questionName: "What is the name of the technology used to run JS outside the browser?",
-            answer: 3,
+            answer: 2,
         },
     ]);
-    expect(average).toBe(100);
+    expect(average.grade).toBe(50);
 });
 
 test("Deve lacar um erro caso tente responder uma questão nao cadastrada", () => {

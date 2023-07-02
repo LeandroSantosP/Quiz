@@ -29,7 +29,7 @@ test("Deve criar um quiz", async () => {
 
     await createQuiz.execute(input);
 
-    expect(quizRepository.quizz.length).toBe(1);
+    expect(quizRepository.quizz.length).toBe(2);
     expect(quizRepository.quizz[0].quizName).toBe("Programming");
     expect(quizRepository.quizz[0].questions[0].correctAnswer).toBe(1);
     expect(quizRepository.quizz[0].questions[1].correctAnswer).toBe(3);

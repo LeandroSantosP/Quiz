@@ -26,6 +26,10 @@ export class Quiz {
             }
         }
 
-        return (total / QuestionsAnswers.length) * 100;
+        return {
+            grade: (total / this.questions.length) * 100,
+            totalQuestion: this.questions.length,
+            questionAnswers: QuestionsAnswers.length,
+        };
     }
 }
