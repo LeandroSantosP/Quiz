@@ -19,3 +19,11 @@ Permitir que os usuários editem ou excluam seus quizzes após criá-los.
 Adicionar suporte para múltiplos idiomas nos quizzes.
 
 Implementar uma funcionalidade de "Dica" para fornecer aos usuários uma pista ou ajuda em determinadas perguntas.
+
+//////////////////////
+
+Deve contabilizar a pontuação do client
+
+raking => new Ranking =>
+
+Deve notificar o client com a nota!

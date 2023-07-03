@@ -1,4 +1,4 @@
-import { Encrypt } from "./Encrypt";
+import { Encrypt } from "@/infra/interfaces/Encrypt";
 
 export class Password {
     value: string;

@@ -1,5 +1,5 @@
-import { BcryptAdapter } from "@/domain/BcryptAdapter";
-import { Password } from "@/domain/Password";
+import { Password } from "@/domain/client/Password";
+import { BcryptAdapter } from "@/infra/interfaces/BcryptAdapter";
 
 const encrypt = new BcryptAdapter();
 test("Deve criar uma senha e criptografar ela", async () => {

@@ -1,9 +1,9 @@
-import { Client } from "@/domain/Client";
-import { IClientRepository } from "../interfaces/IClientRepository";
-import { Password } from "@/domain/Password";
-import { Encrypt } from "@/domain/Encrypt";
-import { Email } from "@/domain/Email";
+import { Client } from "@/domain/client/Client";
+import { Email } from "@/domain/client/Email";
+import { Password } from "@/domain/client/Password";
 import { randomUUID } from "crypto";
+import { IClientRepository } from "../interfaces/IClientRepository";
+import { Encrypt } from "@/infra/interfaces/Encrypt";
 
 export class CreateClientUsecase {
     constructor(readonly clientRepository: IClientRepository, readonly encrypt: Encrypt) {}

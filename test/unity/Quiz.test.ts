@@ -1,5 +1,5 @@
-import { Question } from "@/domain/Question";
-import { Quiz } from "@/domain/Quiz";
+import { Question } from "@/domain/quiz/Question";
+import { Quiz } from "@/domain/quiz/Quiz";
 
 test("Deve criar um quiz", () => {
     const quiz = Quiz.create("Programming", "123");
@@ -9,6 +9,7 @@ test("Deve criar um quiz", () => {
 
 test("Deve criar um quiz e adicionar questões", () => {
     const quiz = Quiz.create("Programming", "123");
+
     quiz.addQuestion(new Question("What is your name?", { 1: "Leandro", 2: "Joao" }, 1));
     expect(quiz.questions.length).toBe(1);
 });

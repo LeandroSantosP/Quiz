@@ -1,7 +1,7 @@
-import { BcryptAdapter } from "@/domain/BcryptAdapter";
-import { Client } from "@/domain/Client";
-import { Email } from "@/domain/Email";
-import { Password } from "@/domain/Password";
+import { Client } from "@/domain/client/Client";
+import { Email } from "@/domain/client/Email";
+import { Password } from "@/domain/client/Password";
+import { BcryptAdapter } from "@/infra/interfaces/BcryptAdapter";
 
 const encrypt = new BcryptAdapter();
 test("Deve criar um client", async () => {

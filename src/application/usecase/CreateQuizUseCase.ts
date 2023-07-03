@@ -1,5 +1,5 @@
-import { Question } from "@/domain/Question";
-import { Quiz } from "@/domain/Quiz";
+import { Question } from "@/domain/quiz/Question";
+import { Quiz } from "@/domain/quiz/Quiz";
 import { IQuizRepository } from "../interfaces/IQuizRepository";
 
 export class CreateQuizUseCase {

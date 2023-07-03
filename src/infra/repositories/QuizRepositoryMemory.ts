@@ -1,6 +1,6 @@
 import { IQuizRepository } from "@/application/interfaces/IQuizRepository";
-import { Question } from "@/domain/Question";
-import { Quiz } from "@/domain/Quiz";
+import { Question } from "@/domain/quiz/Question";
+import { Quiz } from "@/domain/quiz/Quiz";
 
 const quiz = Quiz.create("Programming", "1234");
 
@@ -19,6 +19,16 @@ quiz.addQuestion(
 
 export class QuizRepositoryMemory implements IQuizRepository {
     quizz: Quiz[] = [quiz];
+
+    static instance: QuizRepositoryMemory;
+
+    static getInstance() {
+        if (!this.instance) {
+            this.instance = new QuizRepositoryMemory();
+        }
+        return this.instance;
+    }
+
     async save(quiz: Quiz): Promise<void> {
         this.quizz.push(quiz);
     }
