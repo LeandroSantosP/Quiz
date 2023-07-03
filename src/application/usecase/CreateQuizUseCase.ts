@@ -1,6 +1,6 @@
+import { Question } from "@/domain/Question";
 import { Quiz } from "@/domain/Quiz";
 import { IQuizRepository } from "../interfaces/IQuizRepository";
-import { Question } from "@/domain/Question";
 
 export class CreateQuizUseCase {
     constructor(private readonly quizRepository: IQuizRepository) {}

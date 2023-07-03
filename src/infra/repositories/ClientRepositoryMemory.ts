@@ -12,7 +12,7 @@ export class ClientRepositoryMemory implements IClientRepository {
     }
 
     async getByEmail(email: string): Promise<Client> {
-        const client = this.clients.find((client) => client.email === email);
+        const client = this.clients.find((client) => client.getEmail() === email);
         if (!client) throw new Error("Client not found");
         return client;
     }

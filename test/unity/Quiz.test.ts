@@ -1,5 +1,5 @@
-import { Quiz } from "@/domain/Quiz";
 import { Question } from "@/domain/Question";
+import { Quiz } from "@/domain/Quiz";
 
 test("Deve criar um quiz", () => {
     const quiz = Quiz.create("Programming", "123");

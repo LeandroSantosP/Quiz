@@ -10,18 +10,19 @@
       "node",
       "jest"
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ],
       "@/application/*": [
-        "./src/application/*"
+        "src/application/*"
       ],
       "@/infra/*": [
-        "./src/infra/*"
+        "src/infra/*"
       ],
       "@/domain/*": [
-        "./src/domain/*"
+        "src/domain/*"
       ]
     },
     "moduleResolution": "Node",
