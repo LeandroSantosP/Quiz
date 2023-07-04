@@ -1,3 +1,5 @@
+import { Category } from "@/domain/quiz/Category";
+import { Evaluation } from "@/domain/quiz/Evaluation";
 import { Question } from "@/domain/quiz/Question";
 import { Quiz } from "@/domain/quiz/Quiz";
 
@@ -44,4 +46,48 @@ test("Deve lacar um erro caso tente responder uma questão nao cadastrada", () =
     expect(() => quiz.getAverage([{ questionName: "Invalid Question", answer: 1 }])).toThrow(
         new Error("Question not found")
     );
+});
+
+test("Deve ser possível avaliar o quiz dando uma nota de 0 a 5", () => {
+    const quiz = Quiz.create("Programming", "123");
+
+    const evaluation_one = {
+        client_id: "124",
+        note: 1,
+    };
+    const evaluation_two = {
+        client_id: "124",
+        note: 1,
+    };
+
+    quiz.addEvaluation(evaluation_one, evaluation_two);
+    expect(quiz.evaluations.length).toBe(2);
+    expect(quiz.evaluations[0].client_id).toBe("124");
+});
+
+test("Deve ser possível adicionar categorias as quiz", () => {
+    const quiz = Quiz.create("Programming", "123");
+
+    quiz.addCategory(
+        new Category(
+            "Technology",
+            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'C"
+        )
+    );
+
+    expect(quiz.categories.length).toBe(1);
+    expect(quiz.categories[0].name).toBe("Technology");
+});
+
+test("Deve calcular a media das avaliações", () => {
+    const quiz = Quiz.create("Programming", "123");
+
+    quiz.evaluations = [
+        { client_id: "123", note: 2, quizId: "123" },
+        { client_id: "123", note: 5, quizId: "123" },
+    ];
+
+    const media = quiz.calculateEvaluationMedia();
+
+    expect(media).toBe(3.5);
 });

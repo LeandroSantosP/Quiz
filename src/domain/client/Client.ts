@@ -9,7 +9,8 @@ export class Client {
         private readonly email: Email,
         readonly age: number,
         readonly country: string,
-        readonly occupation: string
+        readonly occupation: string,
+        public score = 0
     ) {}
 
     getEmail() {

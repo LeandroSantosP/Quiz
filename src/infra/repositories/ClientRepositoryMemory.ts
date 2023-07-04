@@ -31,4 +31,10 @@ export class ClientRepositoryMemory implements IClientRepository {
         if (!client) throw new Error("Client not found");
         return client;
     }
+
+    async updateScore(client_id: string, grade: number): Promise<void> {
+        const client = this.clients.find((client) => client.id === client_id);
+        if (!client) throw new Error("Client not found");
+        client.score += grade;
+    }
 }

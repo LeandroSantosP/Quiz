@@ -22,8 +22,10 @@ Implementar uma funcionalidade de "Dica" para fornecer aos usuários uma pista o
 
 //////////////////////
 
-Deve contabilizar a pontuação do client
+Deve contabilizar a pontuação do client OK
 
-raking => new Ranking =>
+Deve notificar o client com a nota! OK
 
-Deve notificar o client com a nota!
+Deve ser buscar pelo ranking da maior para a menor pontuação. OK
+
+Deve ser possível categorizas os quizzes por categoria OK
