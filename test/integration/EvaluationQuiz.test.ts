@@ -7,7 +7,7 @@ import { QuizEvaluatedHandler } from "@/application/handler/QuizEvaluatedHandler
 import { ClientRepositoryMemory } from "@/infra/repositories/ClientRepositoryMemory";
 import { MailerMemory } from "@/infra/service/MailerMemory";
 
-test("Deve ser possível Avaliar um quiz.", async () => {
+test("Deve ser possível Avaliar um quiz e enviar um email de sucesso.", async () => {
     const clientRepository = new ClientRepositoryMemory();
 
     const quizRepository = new QuizRepositoryMemory();

@@ -99,3 +99,43 @@ test("Deve submeter o quiz e Salvar a pontuação do client e calcular a nota e 
     await submitQuiz.execute(input);
     expect(mailerMemory.messages[0].message).toBe("Ola JoeDoe sua nota do quiz foi 50");
 });
+
+test("Deve submeter um quiz e salvar o quiz com maior pontuação!", async () => {
+    const client = GenericClient.create({
+        email: "joao@gmil.com",
+        id: "9999",
+    });
+    await clientRepository.save(client);
+
+    const inputOne = {
+        quizId: "1234",
+        client_id: client.id,
+        answers: [
+            {
+                questionName: "What is the name of the technology used to run JS outside the browser?",
+                answer: 3,
+            },
+        ],
+    };
+
+    const inputTwo = {
+        quizId: "1234",
+        client_id: client.id,
+        answers: [
+            {
+                questionName: "Javascript is batter than rest?",
+                answer: 1,
+            },
+            {
+                questionName: "What is the name of the technology used to run JS outside the browser?",
+                answer: 3,
+            },
+        ],
+    };
+    await submitQuiz.execute(inputOne);
+    await submitQuiz.execute(inputTwo);
+
+    const clientUpdated = await clientRepository.getByEmail("joao@gmil.com");
+
+    expect(clientUpdated.getMaxScore()).toBe(100);
+});

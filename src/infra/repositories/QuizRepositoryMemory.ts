@@ -1,4 +1,4 @@
-import { GetEvaluationMediaOutput, IQuizRepository } from "@/application/interfaces/IQuizRepository";
+import { DeleteOutput, IQuizRepository } from "@/application/interfaces/IQuizRepository";
 import { Question } from "@/domain/quiz/Question";
 import { Quiz } from "@/domain/quiz/Quiz";
 
@@ -46,5 +46,17 @@ export class QuizRepositoryMemory implements IQuizRepository {
         }
 
         this.quizz[index] = updatedQuiz;
+    }
+
+    async delete(quizForDelete: Quiz): Promise<DeleteOutput> {
+        const quizRemoved = this.quizz.splice(this.quizz.indexOf(quizForDelete), 1);
+
+        const output: DeleteOutput = [];
+
+        for (const quiz of quizRemoved) {
+            output.push({ id: quiz.id, name: quiz.quizName });
+        }
+
+        return output;
     }
 }

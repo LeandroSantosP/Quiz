@@ -36,5 +36,6 @@ export class ClientRepositoryMemory implements IClientRepository {
         const client = this.clients.find((client) => client.id === client_id);
         if (!client) throw new Error("Client not found");
         client.score += grade;
+        client.updatedMaxScore(grade);
     }
 }

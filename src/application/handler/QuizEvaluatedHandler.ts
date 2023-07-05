@@ -1,9 +1,8 @@
-import { IClientRepository } from "../interfaces/IClientRepository";
 import { Mailer } from "../interfaces/IMailer";
-import { Handler } from "./Handler";
+import { IHandler } from "../interfaces/IHandler";
 import { QuizEvaluated } from "@/domain/event/QuizEvaluated";
 
-export class QuizEvaluatedHandler implements Handler {
+export class QuizEvaluatedHandler implements IHandler {
     eventName = "QuizEvaluated";
 
     constructor(private readonly mailer: Mailer) {}

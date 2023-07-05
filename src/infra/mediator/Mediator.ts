@@ -1,9 +1,9 @@
 import { DomainEvent } from "@/domain/event/DomainEvent";
-import { Handler } from "../../application/handler/Handler";
+import { IHandler } from "../../application/interfaces/IHandler";
 import { IMediator } from "./IMediator";
 
 export class Mediator implements IMediator {
-    handles: Handler[];
+    handles: IHandler[];
 
     constructor() {
         this.handles = [];
@@ -25,7 +25,7 @@ export class Mediator implements IMediator {
         }
     }
 
-    register(handler: Handler): void {
+    register(handler: IHandler): void {
         this.handles.push(handler);
     }
 }

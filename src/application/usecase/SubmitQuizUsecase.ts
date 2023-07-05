@@ -8,6 +8,7 @@ export class SubmitQuizUsecase {
         const quiz = await this.submitQuizFactory.quizRepository().get(input.quizId);
         const client = await this.submitQuizFactory.clientRepository().getById(input.client_id);
         const output = quiz.getAverage(input.answers);
+
         const event = new QuizSubmitted(quiz.id, client.id, output.grade, client.getEmail(), client.name);
         await this.submitQuizFactory.mediator().publisher(event);
 

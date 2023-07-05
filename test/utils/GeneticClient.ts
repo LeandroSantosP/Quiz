@@ -1,7 +1,7 @@
 import { Client } from "@/domain/client/Client";
 import { Email } from "@/domain/client/Email";
 import { Password } from "@/domain/client/Password";
-import { BcryptAdapter } from "@/infra/interfaces/BcryptAdapter";
+import { BcryptAdapter } from "@/infra/service/BcryptAdapter";
 import { randomUUID } from "crypto";
 
 export class GenericClient {

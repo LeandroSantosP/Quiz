@@ -1,6 +1,6 @@
 import { CreateClientUsecase } from "@/application/usecase/CreateClientUsecase";
-import { BcryptAdapter } from "@/infra/interfaces/BcryptAdapter";
 import { ClientRepositoryMemory } from "@/infra/repositories/ClientRepositoryMemory";
+import { BcryptAdapter } from "@/infra/service/BcryptAdapter";
 
 test("Deve criar um client", async () => {
     const clientRepository = new ClientRepositoryMemory();

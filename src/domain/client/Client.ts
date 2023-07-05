@@ -10,7 +10,8 @@ export class Client {
         readonly age: number,
         readonly country: string,
         readonly occupation: string,
-        public score = 0
+        public score = 0,
+        private maxScore = 0
     ) {}
 
     getEmail() {
@@ -20,5 +21,15 @@ export class Client {
     async getPassword() {
         await this.password.encryptPass();
         return this.password.value;
+    }
+
+    updatedMaxScore(newMaxScore: number) {
+        if (newMaxScore > this.maxScore) {
+            this.maxScore = newMaxScore;
+        }
+    }
+
+    getMaxScore() {
+        return this.maxScore;
     }
 }

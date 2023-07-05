@@ -78,16 +78,3 @@ test("Deve ser possível adicionar categorias as quiz", () => {
     expect(quiz.categories.length).toBe(1);
     expect(quiz.categories[0].name).toBe("Technology");
 });
-
-test("Deve calcular a media das avaliações", () => {
-    const quiz = Quiz.create("Programming", "123");
-
-    quiz.evaluations = [
-        { client_id: "123", note: 2, quizId: "123" },
-        { client_id: "123", note: 5, quizId: "123" },
-    ];
-
-    const media = quiz.calculateEvaluationMedia();
-
-    expect(media).toBe(3.5);
-});

@@ -37,8 +37,9 @@ export class Quiz {
             }
         }
 
+        const grade = (total / this.questions.length) * 100;
         return {
-            grade: (total / this.questions.length) * 100,
+            grade,
             totalQuestion: this.questions.length,
             questionAnswers: QuestionsAnswers.length,
         };
@@ -47,12 +48,5 @@ export class Quiz {
         for (const evaluation of evaluations) {
             this.evaluations.push(new Evaluation(this.id, evaluation.client_id, evaluation.note));
         }
-    }
-    calculateEvaluationMedia() {
-        let total = 0;
-        for (const evaluation of this.evaluations) {
-            total += evaluation.note;
-        }
-        return total / this.evaluations.length;
     }
 }
